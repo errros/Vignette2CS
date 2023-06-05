@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="260.0" minWidth="500.0" prefHeight="260.0" prefWidth="385.0" styleClass="Dialog" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wrmanager.wrmanagerfx.controllers.OuiNonDialogController">
+   <content>
+      <AnchorPane maxWidth="410.0" minWidth="410.0" prefWidth="410.0" style="-fx-background-color: transparent;">
+         <children>
+            <AnchorPane layoutX="7.600000202655792" layoutY="0.6000000387430191" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="385.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="-1.0" layoutY="5.0" prefHeight="42.0" prefWidth="412.0" styleClass="TopAnchor" AnchorPane.bottomAnchor="167.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="-6.0">
+                     <children>
+                        <Label fx:id="TitleLabel" alignment="CENTER" layoutX="118.0" layoutY="9.0" text="Supprimer Fournisseur" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow height="1.0" offsetY="3.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <VBox alignment="CENTER" layoutX="140.0" layoutY="108.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label fx:id="SubjectLabel" alignment="CENTER" text="Vous etes sur de la suppression de ce Fournisseur ?">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="74.0" prefWidth="284.0" spacing="30.0">
+                           <children>
+                              <MFXButton fx:id="OuiButton" buttonType="RAISED" depthLevel="LEVEL3" onAction="#OuiButtonOnAction" prefHeight="38.0" prefWidth="78.0" styleClass="DialogButtons" text="Oui" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton fx:id="NonButton" buttonType="RAISED" depthLevel="LEVEL3" onAction="#NonButtonOnAction" prefHeight="38.0" prefWidth="78.0" styleClass="DialogAnnluerButton" text="Non" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <Shadow>
+                                       <color>
+                                          <Color red="0.7568627595901489" green="0.15294118225574493" blue="0.15294118225574493" />
+                                       </color>
+                                    </Shadow>
+                                 </effect>
+                              </MFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="7.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow height="31.41" radius="14.955" width="30.41">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+         <padding>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+   </content>
+</DialogPane>

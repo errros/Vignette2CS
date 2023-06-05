@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="666.0" prefWidth="939.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wrmanager.wrmanagerfx.controllers.Parametres2ViewController">
+   <children>
+      <GridPane alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="SecondBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <children>
+                  <AnchorPane layoutY="8.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="cards">
+                                 <children>
+                                    <GridPane alignment="CENTER_LEFT" hgap="10.0" layoutX="-28.0" layoutY="-23.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="Catégorie par défaut :">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <ChoiceBox fx:id="CategoryChoiceBox" prefHeight="40.0" prefWidth="350.0" styleClass="ChoiceBox" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label text="Marge par defaut:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="MargeBenefTfd" prefHeight="40.0" prefWidth="388.0" promptText="Marge par defaut:" styleClass="DialogTextField" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label text="Qty D’alerte par défaut :">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="QtyAlertTfd" prefHeight="40.0" prefWidth="388.0" promptText="Qty D’alerte par défaut" styleClass="DialogTextField" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+                                             <children>
+                                                <Label text="Jours D’alerte par défaut :">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="JrsAlertTfd" prefHeight="40.0" prefWidth="388.0" promptText="Jours D’alerte par défaut " styleClass="DialogTextField" />
+                                             </children>
+                                          </VBox>
+                                          <Label graphicTextGap="0.0" text="dialog de validation" GridPane.columnIndex="3">
+                                             <graphic>
+                                                <MFXToggleButton fx:id="dgValidationToggle" graphicTextGap="0.0" length="50.0" rotate="90.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="-30.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label text="Stock Négatif" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                             <graphic>
+                                                <MFXToggleButton fx:id="StockNegatifToggle" length="50.0" rotate="90.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets left="-30.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <MFXButton fx:id="SauvgarderButton" buttonType="RAISED" graphicTextGap="7.0" onAction="#SauvgarderButtonOnAction" prefHeight="40.0" prefWidth="182.0" styleClass="AjouterButton" text="Sauvgarder" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </MFXButton>
+                                          <MFXButton fx:id="ResetButton" buttonType="RAISED" graphicTextGap="7.0" onAction="#ResetButtonOnAction" prefHeight="40.0" prefWidth="182.0" styleClass="AjouterButton" text="réinitialiser" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="EXCLAMATION_TRIANGLE" size="18" />
+                                             </graphic>
+                                          </MFXButton>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label text="marge Kg :">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="MargeKgTfd" prefHeight="40.0" prefWidth="388.0" promptText="marge Kg" styleClass="DialogTextField" />
+                                             </children>
+                                          </VBox>
+                                          <Label text="Notification" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                             <graphic>
+                                                <MFXToggleButton fx:id="NotificationToggle" length="50.0" rotate="90.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="-30.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="AlertLbl" graphicTextGap="7.0" minHeight="50.0" prefHeight="26.0" prefWidth="444.0" text="bgdgdbgdfgbdushfrerbreiubviuberiuvzbifynuy" textFill="#dc7f7f" wrapText="true" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#cc0a0a" glyphName="EXCLAMATION_TRIANGLE" size="17.0" text="" />
+                                             </graphic>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                             <GridPane.margin>
+                                                <Insets right="-200.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label graphicTextGap="0.0" text="Impression Bon d'Achat" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                             <graphic>
+                                                <MFXToggleButton fx:id="dgvalidationBonAchat" graphicTextGap="0.0" length="50.0" rotate="90.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="-30.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                 <effect>
+                                    <DropShadow height="0.0" offsetX="4.0" offsetY="4.0" radius="0.0" width="0.0">
+                                       <color>
+                                          <Color opacity="0.25" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane GridPane.rowIndex="1">
+                                 <children>
+                                    <AnchorPane layoutY="8.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="cards">
+                                                   <children>
+                                                      <GridPane alignment="CENTER_LEFT" hgap="10.0" layoutX="-28.0" layoutY="-23.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" percentHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" percentHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <Label text="la couleur principale :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ColorPicker fx:id="PrimaryColor" prefHeight="27.0" prefWidth="202.0" styleClass="ChoiceBox" />
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <Label text="la couleur secondaire :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ColorPicker fx:id="SecondaryColor" prefHeight="27.0" prefWidth="202.0" styleClass="ChoiceBox" />
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <Label text="la couleur de text :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ColorPicker prefHeight="27.0" prefWidth="204.0" styleClass="ChoiceBox" />
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <Label text="Catégorie par défaut :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ColorPicker prefHeight="27.0" prefWidth="202.0" styleClass="ChoiceBox" />
+                                                               </children>
+                                                            </VBox>
+                                                            <Label text="Thème :">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <MFXButton fx:id="ResetColorsButton" buttonType="RAISED" graphicTextGap="7.0" onAction="#ResetColorsButtonOnAction" prefHeight="40.0" prefWidth="182.0" styleClass="AjouterButton" text="réinitialiser" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                                               <font>
+                                                                  <Font name="System Bold" size="15.0" />
+                                                               </font>
+                                                            </MFXButton>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow height="1.0" offsetX="4.0" offsetY="4.0" radius="0.0" width="0.0">
+                                                         <color>
+                                                            <Color opacity="0.15000000596046448" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </AnchorPane>
+                                             </children>
+                                             <padding>
+                                                <Insets left="8.0" right="8.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="1.0" radius="0.0" width="0.0" />
+                                 </effect>
+                              </AnchorPane>
+                           </children>
+                           <padding>
+                              <Insets left="8.0" right="8.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <effect>
+                  <DropShadow height="1.0" radius="0.0" width="0.0" />
+               </effect>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

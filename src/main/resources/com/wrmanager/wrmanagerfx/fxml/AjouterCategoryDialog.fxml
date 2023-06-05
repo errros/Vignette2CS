@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="530.0" minWidth="420.0" prefHeight="200.0" prefWidth="385.0" styleClass="Dialog" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wrmanager.wrmanagerfx.controllers.AjouterCategoryDialogController">
+   <content>
+      <AnchorPane minWidth="410.0" prefWidth="410.0" style="-fx-background-color: transparent;">
+         <children>
+            <AnchorPane layoutX="7.600000202655792" layoutY="0.6000000387430191" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="385.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="-1.0" layoutY="5.0" prefHeight="42.0" prefWidth="388.0" styleClass="TopAnchor" AnchorPane.bottomAnchor="440.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="-6.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="87.0" layoutY="6.0" text="Ajouter une Catégorie" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow height="1.0" offsetY="3.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <VBox layoutX="140.0" layoutY="108.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label fx:id="Cod" text="Nom  * :">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="NomTfd" prefHeight="50.0" prefWidth="388.0" style="-fx-border-color: rgba(35, 140, 131, 0.6);" styleClass="DialogTextField" />
+                        <Label text="Marge * :">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <GridPane prefHeight="50.0" prefWidth="388.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.4" minWidth="10.0" prefWidth="386.4" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="7.20001220703125" minWidth="0.0" percentWidth="3.0" prefWidth="0.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="MargeTfd" prefHeight="50.0" prefWidth="388.0" style="-fx-border-color: rgba(35, 140, 131, 0.6);" styleClass="DialogTextField" />
+                              <Label fx:id="uniteTF" text="\%" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="-30.0" />
+                                 </GridPane.margin>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <Label text="Quantité D'Alerte * :">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="QTeAlerte" prefHeight="50.0" style="-fx-border-color: rgba(35, 140, 131, 0.6);" styleClass="DialogTextField" />
+                        <Label text="Jours D'alerte * :">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="JoursAlerteTf" prefHeight="50.0" style="-fx-border-color: rgba(35, 140, 131, 0.6);" styleClass="DialogTextField" />
+                        <Label fx:id="AlertLbl" graphicTextGap="7.0" maxWidth="1.7976931348623157E308" minHeight="50.0" text="code barre faux ferfireiub eriubfiuerbfcerreervrevrevreverv" textFill="#dc7f7f" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#cc0a0a" glyphName="EXCLAMATION_TRIANGLE" size="24.0" text="" />
+                           </graphic>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="74.0" prefWidth="284.0" spacing="20.0">
+                           <children>
+                              <MFXButton fx:id="AjouterEtResterButton" buttonType="RAISED" depthLevel="LEVEL3" onAction="#AjouterEtResterButtonOnAction" styleClass="DialogButtons" text="Ajouter et rester" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton fx:id="AjouterButton" buttonType="RAISED" depthLevel="LEVEL3" onAction="#AjouterButtonOnAction" styleClass="DialogButtons" text="Ajouter" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton fx:id="AnnulerButton" buttonType="RAISED" depthLevel="LEVEL3" onAction="#AnnulerButtonOnAction" styleClass="DialogAnnluerButton" text="Annuler" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <Shadow>
+                                       <color>
+                                          <Color red="0.7568627595901489" green="0.15294118225574493" blue="0.15294118225574493" />
+                                       </color>
+                                    </Shadow>
+                                 </effect>
+                              </MFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="7.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow height="31.41" radius="14.955" width="30.41">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+         <padding>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+   </content>
+</DialogPane>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="927.0" styleClass="RootColor" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wrmanager.wrmanagerfx.controllers.SideBarController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="441.0" prefWidth="126.0" spacing="15.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <children>
+            <AnchorPane fx:id="logo" prefHeight="50.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></AnchorPane>
+            <MFXButton fx:id="CaisseButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#CaisseButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Caisse" textFill="#aeb9be">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fx:id="CaisseIcon" fill="#bfbfbf" glyphName="DOLLAR" selectionFill="BLACK" size="16" styleClass="icons" text="" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+            <MFXButton fx:id="StockButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#StockButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Stock" textFill="#aeb9be">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fx:id="StockIcon" fill="#bfbfbf" glyphName="PRINT" selectionFill="BLACK" size="16" styleClass="icons" text="" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+            <MFXButton fx:id="VentesButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#VentesButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Ventes" textFill="#aeb9be">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fx:id="VentesIcon" fill="#bfbfbf" glyphName="SHOPPING_CART" size="16" styleClass="icons" text="" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+            <MFXButton fx:id="AchatsButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#AchatsButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Achats" textFill="#aeb9be">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fx:id="AchatsIcon" fill="#bfbfbf" glyphName="TRUCK" size="16" styleClass="icons" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+            <MFXButton fx:id="ProduitsButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#ProduitsButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Produits" textFill="#aeb9be">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fx:id="ProduitsIcon" fill="#bfbfbf" glyphName="SHOPPING_BAG" size="16" styleClass="icons" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+            <MFXButton fx:id="CommandesButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#CommandesButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Commande" textFill="#aeb9be">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fx:id="CommandesIcon" fill="#bfbfbf" glyphName="PENCIL" selectionFill="BLACK" size="16" styleClass="icons" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+            <MFXButton fx:id="FournisseursButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#FournisseursButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Fournisseurs" textFill="#aeb9be">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fx:id="FournisseursIcon" fill="#bfbfbf" glyphName="USERS" size="16" styleClass="icons" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+            <MFXButton fx:id="StatistiquesButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#StatistiquesButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Statistiques" textFill="#aeb9be">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fx:id="StatistiquesIcon" fill="#bfbfbf" glyphName="BAR_CHART" size="16" styleClass="icons" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+            <MFXButton fx:id="ParametresButton" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL3" graphicTextGap="10.0" onAction="#ParametresButtonOnAction" prefHeight="45.0" prefWidth="170.0" rippleColor="#e7e5e5" styleClass="SideBarButton" text="Paramètres" textFill="#aeb9be">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="100.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fx:id="ParametresIcon" fill="#bfbfbf" glyphName="COG" size="18" styleClass="icons" text="" />
+               </graphic>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </MFXButton>
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </GridPane.margin>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="95.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <StackPane fx:id="contentArea" styleClass="icons" GridPane.rowIndex="1" />
+            <AnchorPane prefHeight="200.0" prefWidth="100.0" styleClass="TopBarBackground">
+               <children>
+                  <AnchorPane fx:id="account" layoutX="576.0" layoutY="5.0" maxHeight="60.0" maxWidth="-Infinity" prefHeight="40.0" prefWidth="187.0" style="-fx-background-color: white; -fx-background-radius: 8;" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
+                     <children>
+                        <GridPane alignment="CENTER" layoutX="-36.0" prefHeight="40.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="rabah aouar" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="NotificationIcon" maxWidth="-Infinity" mnemonicParsing="false" onAction="#NotificationIconOnAction" prefHeight="26.0" prefWidth="26.0">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="5.0" right="2.0" top="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <Button fx:id="AvatarIcon" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="2.0" right="5.0" top="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <effect>
+                        <DropShadow height="1.0" offsetX="4.0" offsetY="4.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</GridPane>

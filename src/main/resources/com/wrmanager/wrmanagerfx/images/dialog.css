@@ -1,0 +1,306 @@
+
+
+.root{
+   primary: rgba(35, 140, 131, 1);
+   secondary:#C8E2E0;
+
+   third:"white";
+   annuler-red: #c12727;
+
+
+-fx-background-raduis:10;
+
+}
+
+/*add icons (fournisseur category*/
+.AddIcons{
+-fx-fill:primary;
+}
+
+/**/
+
+
+.HBox{
+-fx-background-color:"white";
+}
+.DialogAnnluerButton{
+-fx-background-color: annuler-red;
+-fx-background-radius :10;
+}
+.DialogButtons{
+-fx-background-color:primary;
+-fx-background-radius :10;
+}
+
+/* top anchor of dialog*/
+.TopAnchor{
+-fx-background-color: primary;
+-fx-background-radius: 20 20 0 0;
+-fx-border-color:primary;
+-fx-border-radius:20;
+}
+
+.TopLabels{
+    -fx-background-color:#fdfdfd;
+    -fx-border-color:primary;
+    -fx-border-radius:5;
+    -fx-padding: 10;
+}
+
+.Dialog{
+-fx-background-color:"transparent";
+-fx-background-radius:20;
+}
+
+/* dialog tfd*/
+.DialogTextField{
+    -fx-background-color:#fdfdfd;
+    -fx-border-color:primary;
+    -fx-border-radius:5;
+}
+.DialogTextField:focused{
+    -fx-background-color:#fdfdfd;
+    -fx-border-color:primary;
+    -fx-border-radius:5;
+}
+
+/*end dialog tfd */
+
+
+/* choice box*/
+.ChoiceBox{
+    -fx-background-color:white,white,white,white;
+    -fx-background-radius:5;
+    -fx-border-color:primary;
+    -fx-border-radius:5;
+}
+
+
+
+
+/*mfx check box */
+.mfx-checkbox{
+-fx-border-color:"transparent";
+-fx-background-radius:20;
+}
+.mfx-checkbox .ripple-container{
+      -fx-background-color:"transparent";
+      -fx-border-color:"white";
+}
+.mfx-checkbox .ripple-container .mfx-ripple-generator{
+-mfx-animation-speed: 1.5;
+-mfx-ripple-color: derive(primary, 110%);
+-mfx-ripple-radius: 16;
+}
+.mfx-checkbox .ripple-container .box .mark{
+-fx-background-color:primary;
+}
+.mfx-checkbox .ripple-container .box{
+-fx-background-color:primary;
+-fx-border-color:primary;
+}
+/*end mfx check box*/
+
+
+
+/* table view */
+.table-view .scroll-bar0 {
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+    -fx-background-color:"transparent";
+    -fx-border-color:"transparent";
+}
+.table-view {
+        -fx-background-color:"white";
+        -fx-background-radius:20;
+        -fx-border-color:primary;
+        -fx-border-radius:20;
+
+        -fx-table-cell-border-color:transparent;
+        -fx-table-column-border-color:transparent;
+        -fx-text-alignment:center;
+        -fx-selection-bar-non-focused:"transparent";
+
+}
+.table-row-cell: even{
+    -fx-background-color: "white";
+
+}
+.table-row-cell: odd{
+    -fx-background-color: "white";
+}
+
+.table-row-cell: hover {
+-fx-alignment:center;
+    -fx-background-color: secondary;
+    -fx-text-alignment:center;
+}
+
+.table-row-cell:selected .text {
+       -fx-fill: "black" ;
+}
+.table-view .table-cell {
+    -fx-alignment: center;
+    -fx-font-size:14;
+
+    }
+.table-row-cell: hover .glyph-icon {
+                       	-fx-fill:"black";
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: "transparent";
+    -fx-border-color:"transparent";
+}
+.table-view .column-header-background .filler:focused {
+    -fx-background-color: "transparent";
+    -fx-border-color:"transparent";
+}
+
+.table-view .column-header-background{
+    -fx-background-color: primary;
+    -fx-background-radius:  20 20 0 0  ;
+    -fx-pref-height:40;
+    -fx-border-color:"transparent";
+
+}
+.table-view .column-header {
+    -fx-background-color: "transparent";
+    -fx-fill :"white";
+    -fx-border-color:"transparent";
+}
+.table-view .column-header .label {
+        -fx-text-fill:"white";
+        -fx-font-size:16;
+        -fx-alignment:center;
+        -fx-font-weight: bold;
+}
+.table-view .corner {
+    -fx-background-color: "transparent";
+}
+
+.table-row-cell:filled:selected {
+  -fx-background: -fx-control-inner-background ;
+  -fx-background-color: -fx-table-cell-border-color, -fx-background ;
+  -fx-background-insets: 0, 0 0 1 0 ;
+  -fx-table-cell-border-color: "transparent";
+}
+.table-row-cell:odd:filled:selected {
+  -fx-background: -fx-control-inner-background-alt ;
+}
+/*end table view
+
+
+
+
+
+
+
+
+/*scroll bar*/
+.scroll-bar,
+.scroll-bar .decrement-arrow,
+.scroll-bar .increment-arrow {
+	-fx-pref-width: 0;
+	-fx-pref-height: 0;
+}
+
+
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0.0em;
+	-fx-padding: 0.0 0.0 10.0 0.0;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0.0em;
+	-fx-padding: 0.0 10.0 0.0 0.0;
+
+}
+
+/*end scroll bar*/
+
+
+
+
+
+
+/* mfx date picker */
+.mfx-date-picker:focus-within .icon {
+	-mfx-color: primary;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo:focus-within,
+.mfx-date-picker .date-picker-popup .years-combo:focus-within {
+	-fx-background-color: #f8f7fa;
+	-fx-text-fill: primary;
+}
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected .label,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected .label {
+	-fx-text-fill: "black";
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:hover,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:hover {
+	-fx-background-color: secondary;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected {
+	-fx-background-color: secondary;
+}
+.mfx-date-picker .date-picker-popup .left-arrow .mfx-ripple-generator,
+.mfx-date-picker .date-picker-popup .right-arrow .mfx-ripple-generator {
+	-mfx-ripple-color: secondary;
+}
+
+.mfx-date-cell:current {
+	-fx-text-fill: primary;
+	-fx-background-color: #F7F6F9;
+	-fx-font-family: "Open Sans SemiBold";
+}
+
+.mfx-date-cell:selected {
+	-fx-text-fill: white;
+	-fx-background-color: primary;
+	-fx-font-family: "Open Sans SemiBold";
+}
+/* end date picker */
+
+
+
+
+.mfx-text-field:focus-within {
+	-fx-background-insets: 2;
+	-fx-border-color: primary;
+	-fx-border-insets: -0.5;
+}
+.mfx-text-field{
+	-fx-background-insets: 2;
+	-fx-border-color: primary;
+	-fx-border-width: 1.5;
+	-fx-border-insets: -0.5;
+}
+
+
+
+
+
+
+
+.button:focused{
+-fx-border-radius:10;
+-fx-border-color:gray;
+-fx-border-width:2;
+
+}
+
+

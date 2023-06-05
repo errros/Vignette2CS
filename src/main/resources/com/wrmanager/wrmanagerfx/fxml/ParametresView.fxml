@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<GridPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wrmanager.wrmanagerfx.controllers.ParametresViewController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <StackPane fx:id="ParamStackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="666.0" prefWidth="939.0" GridPane.rowIndex="1" />
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <children>
+            <MFXButton fx:id="param1Button" buttonType="RAISED" graphicTextGap="7.0" onAction="#param1ButtonOnAction" prefHeight="40.0" styleClass="SideBarButton" text="param">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </MFXButton>
+            <MFXButton fx:id="param2Button" buttonType="RAISED" graphicTextGap="7.0" onAction="#param2ButtonOnAction" prefHeight="40.0" styleClass="SideBarButton" text="constants">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </MFXButton>
+            <MFXButton fx:id="param3Button" buttonType="RAISED" graphicTextGap="7.0" onAction="#param3ButtonOnAction" prefHeight="40.0" styleClass="SideBarButton" text="Info Magasin">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </MFXButton>
+         </children>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+      </HBox>
+   </children>
+</GridPane>

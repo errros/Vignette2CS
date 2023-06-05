@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="780.0" minWidth="1100.0" prefHeight="611.0" prefWidth="900.0" styleClass="Dialog" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wrmanager.wrmanagerfx.controllers.AjouterAchat2DialogController">
+   <content>
+      <AnchorPane maxWidth="410.0" minWidth="410.0" prefWidth="410.0" style="-fx-background-color: transparent;">
+         <children>
+            <AnchorPane layoutX="7.600000202655792" layoutY="0.6000000387430191" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="385.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="5.0" layoutY="4.0" prefHeight="67.0" prefWidth="886.0" styleClass="TopAnchor" AnchorPane.bottomAnchor="686.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="-6.0">
+                     <children>
+                        <Label fx:id="titleLabel" alignment="CENTER" layoutX="466.0" layoutY="13.0" text="Ajouter achat" textFill="WHITE" AnchorPane.rightAnchor="467.20000000000005">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow height="1.0" offsetY="3.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <GridPane layoutX="10.0" layoutY="65.0" prefHeight="510.0" prefWidth="760.0" vgap="15.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="70.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" percentHeight="43.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane style="-fx-background-color: white; -fx-background-radius: 20;" GridPane.rowIndex="1">
+                           <effect>
+                              <DropShadow height="33.33" radius="15.434999999999999" width="30.41">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <children>
+                              <GridPane fx:id="inputGridPane" alignment="BOTTOM_CENTER" hgap="15.0" layoutX="275.0" layoutY="90.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="16.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="codeBarreTF" prefHeight="40.0" promptText="Code Barre" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                          <Label text="Code Barre :">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Button fx:id="AjouterProduitButton" graphicTextGap="0.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text=" " GridPane.columnIndex="2">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#238c83" glyphName="PLUS_CIRCLE" size="24" styleClass="AddIcons" />
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.columnIndex="2">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <MFXDatePicker fx:id="datePeremptionDP" prefHeight="38.0" prefWidth="301.0" promptText="Date de péremption" GridPane.columnIndex="1" />
+                                          <Label text="Date de péremption :">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <GridPane HBox.hgrow="ALWAYS">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="qtyTotaleTF" prefHeight="40.0" prefWidth="189.0" promptText="Quantité Totale" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                                <Label text="Quantité Totale :">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </HBox>
+                                    <GridPane GridPane.columnIndex="1">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="designationTF" prefHeight="40.0" promptText="Désignation" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                          <Label text="Désignation :">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="qtyUnitaireTF" prefHeight="40.0" prefWidth="186.0" promptText="Quantité Unitaire" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                          <Label text="Quantité Unitaire :">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="prxAchatTotaleTF" prefHeight="40.0" promptText="Prix d'Achat Totale" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                          <Label text="Prix d'Achat Totale :">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.rowIndex="2">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="prxAchatUnitaireTF" prefHeight="40.0" prefWidth="170.0" promptText="Prix d'Achat Unitaire" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                          <Label text="Prix d'Achat Unitaire :">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="prxVenteUnitaireTF" prefHeight="40.0" prefWidth="187.0" promptText="Prix d'Vente Unitaire" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                          <Label text="Prix d'Vente Unitaire ;">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="prxVenteTotaleTF" prefHeight="40.0" promptText="Prix d'Vente Totale" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                          <Label text="Prix d'Vente Totale :">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets right="-345.0" />
+                                       </GridPane.margin>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="13.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="remarqueTF" prefHeight="40.0" prefWidth="900.0" promptText="Remarque" styleClass="DialogTextField" GridPane.columnIndex="1" />
+                                          <Label text="Remarque :">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <MFXButton fx:id="AjouterButton" alignment="CENTER" buttonType="RAISED" depthLevel="LEVEL3" nodeOrientation="LEFT_TO_RIGHT" onAction="#AjouterButtonOnAction" prefHeight="38.0" prefWidth="138.0" styleClass="DialogButtons" text="Ajouter" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </MFXButton>
+                                    <MFXButton fx:id="ViderButton" alignment="CENTER" buttonType="RAISED" depthLevel="LEVEL3" nodeOrientation="LEFT_TO_RIGHT" onAction="#ViderButtonOnAction" prefHeight="38.0" prefWidth="138.0" styleClass="DialogButtons" text="Vider" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </MFXButton>
+                                    <MFXButton fx:id="CodeBarreButton" alignment="CENTER" buttonType="RAISED" depthLevel="LEVEL3" nodeOrientation="LEFT_TO_RIGHT" onAction="#CodeBarreButtonOnAction" prefHeight="38.0" prefWidth="138.0" styleClass="DialogButtons" text="code Barre" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </MFXButton>
+                                    <Label fx:id="AlertLbl" graphicTextGap="7.0" prefHeight="28.0" prefWidth="328.0" text="code barre faux ferfireiub eriubfiu" textFill="#dc7f7f" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#cc0a0a" glyphName="EXCLAMATION_TRIANGLE" size="17.0" text="" />
+                                       </graphic>
+                                       <padding>
+                                          <Insets left="10.0" right="-200.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="code barre" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <MFXCheckbox prefHeight="33.0" prefWidth="49.0" selected="true" styleClass="checkbox" textFill="#ff0f0f">
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </MFXCheckbox>
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </AnchorPane>
+                        <GridPane alignment="CENTER_RIGHT" GridPane.rowIndex="3">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.79998779296875" minWidth="10.0" prefWidth="228.80001220703124" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.79998779296875" minWidth="10.0" prefWidth="173.59998779296873" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.2000122070313" minWidth="10.0" prefWidth="173.39998779296872" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.39996337890625" minWidth="10.0" percentWidth="25.0" prefWidth="175.20001220703125" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <MFXButton fx:id="AnnulerButton" alignment="CENTER" buttonType="RAISED" depthLevel="LEVEL3" nodeOrientation="LEFT_TO_RIGHT" onAction="#AnnulerButtonOnAction" prefHeight="38.0" prefWidth="138.0" styleClass="DialogAnnluerButton" text="Annuler" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </MFXButton>
+                              <Label fx:id="TotaleLabel" text="Totale : 0 DA" textFill="#238c83" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <MFXButton fx:id="ValiderButton" alignment="CENTER" buttonType="RAISED" depthLevel="LEVEL3" nodeOrientation="LEFT_TO_RIGHT" onAction="#ValiderButtonOnAction" prefHeight="38.0" prefWidth="138.0" rippleAnimateBackground="false" styleClass="DialogButtons" text="Valider" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </MFXButton>
+                              <Label text="Payé" GridPane.halignment="RIGHT">
+                                 <graphic>
+                                    <MFXCheckbox fx:id="payeCheckBox" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="LignesAchatTable" prefHeight="310.0" prefWidth="678.0" GridPane.rowIndex="2">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="-1.0" top="-1.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow height="31.0" radius="15.0" width="31.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TableView>
+                        <GridPane>
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="Label1" prefHeight="50.0" prefWidth="193.0" styleClass="TopLabels" text="Bon N° : 0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="Label2" styleClass="TopLabels" text="Fournisseur : Aucun" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="Label3" styleClass="TopLabels" text="Nombre de produits : 0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow height="31.41" radius="14.955" width="30.41">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+         <padding>
+            <Insets bottom="2.0" left="10.0" right="5.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+   </content>
+</DialogPane>
