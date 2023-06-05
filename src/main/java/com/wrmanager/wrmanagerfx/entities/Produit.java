@@ -36,60 +36,29 @@ public class Produit {
     @Column(nullable = false,unique = true)
     private String codeBarre;
 
-
+//NOM
     @Basic(optional = false)
     @Column(nullable = false,unique = true)
     private String designation;
+
+
+    private String dci;
+
+
+    private String forme;
+
+
+    private String dosage;
+
+
     @Builder.Default
     @Basic(optional = false)
     @Column(nullable = false)
     private Timestamp creeLe  = Timestamp.valueOf(LocalDateTime.now());;
 
-    @Builder.Default
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private Float qtyTotale = 0f;
-    @Builder.Default
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private Integer prixAchatTotale = 0;
-    @Builder.Default
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private Integer prixVenteTotale = 0;
-    @Builder.Default
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private Integer prixAchatUnite = 0;
-    @Builder.Default
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private Integer prixVenteUnite = 0;
-
-    @Builder.Default
-    @Enumerated(value = EnumType.STRING)
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private SystemMeasure systemMeasure = SystemMeasure.UNITE;
-
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private Float qtyUnite;
-
-    @Builder.Default
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private Boolean estPerissable = false;
-
-
 
     private Date datePeremption;
 
-
-    @Builder.Default
-    private Float qtyAlerte = DEFAULT_QTY_ALERTE_PRODUIT;
-
-    private Integer joursAlerte;
 
 
 
@@ -98,18 +67,16 @@ public class Produit {
     @JoinColumn(name = "categorie_id ",nullable = false)
     private Categorie categorie = DEFAULT_CATEGORIE_PRODUIT;
 
-    @Builder.Default
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "achat" )
-    private List<LigneAchat> ligneAchats = new ArrayList<>();
-
-    @Builder.Default
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "produit")
-    private List<LigneVente> ligneVentes = new ArrayList<>();
 
 
     @Builder.Default
     @OneToMany(mappedBy = "produit")
     private List<ProduitFavori> favoris = new ArrayList<>();
+
+
+    @Builder.Default
+    @OneToMany(mappedBy = "produit")
+    private List<Stock> stocks = new ArrayList<>();
 
 
     private URI imagePath;
@@ -135,8 +102,16 @@ public class Produit {
         produitFavori.setProduit(null);
 
     }
+    public void addStock(Stock stock){
+        stocks.add(stock);
+        stock.setProduit(this);
 
+    }
+    public void removeStock(Stock stock){
+        stocks.remove(stock);
+        stock.setProduit(null);
 
+    }
 
 
     @Override
@@ -146,17 +121,10 @@ public class Produit {
                 ", codeBarre='" + codeBarre + '\'' +
                 ", designation='" + designation + '\'' +
                 ", creeLe=" + creeLe +
-                ", qtyTotale=" + qtyTotale +
-                ", prixAchatTotale=" + prixAchatTotale +
-                ", prixVenteTotale=" + prixVenteTotale +
-                ", prixAchatUnite=" + prixAchatUnite +
-                ", prixVenteUnite=" + prixVenteUnite +
-                ", systemMeasure=" + systemMeasure +
-                ", qtyUnite=" + qtyUnite +
-                ", estPerissable=" + estPerissable +
                 ", datePeremption=" + datePeremption +
-                ", qtyAlerte=" + qtyAlerte +
-                ", categorie=" + categorie.getNom() +
+                ", categorie=" + categorie +
+                ", favoris=" + favoris +
+                ", imagePath=" + imagePath +
                 '}';
     }
 }

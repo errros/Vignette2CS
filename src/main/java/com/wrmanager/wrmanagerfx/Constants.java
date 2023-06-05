@@ -43,6 +43,8 @@ public class Constants {
 
     //DAO dependecy injection
 
+    public static final StockDAO stockDAO = new StockDAO();
+
     public static final CategorieDAO categorieDAO = new CategorieDAO();
     public static final ProduitDAO produitDAO = new ProduitDAO();
     public static final AchatDAO achatDao = new AchatDAO();

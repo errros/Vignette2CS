@@ -169,10 +169,7 @@ public class AjouterProduitDialogController implements Initializable {
         if(validateInput(codeBarre,designation,qtyUnit,sys,peerisable,jrsAlert,qtyAlert)) {
     Produit produit = Produit.builder().
             codeBarre(codeBarre).
-            designation(designation).
-            systemMeasure(sys).
-            qtyUnite(Float.valueOf(qtyUnit)).qtyAlerte(Float.valueOf(qtyAlert)).joursAlerte(Integer.valueOf(jrsAlert)).
-            estPerissable(peerisable)
+            designation(designation)
             .build();
 
 
@@ -204,12 +201,12 @@ public class AjouterProduitDialogController implements Initializable {
 
             passedProduit.setCodeBarre(codeBarre);
             passedProduit.setDesignation(designation);
-            passedProduit.setSystemMeasure(sys);
+          /*  passedProduit.setSystemMeasure(sys);
             passedProduit.setEstPerissable(peerisable);
             passedProduit.setQtyUnite(Float.valueOf(qtyUnit));
             passedProduit.setQtyUnite(Float.valueOf(qtyAlert));
             passedProduit.setJoursAlerte(Integer.valueOf(Math.round(Float.valueOf(jrsAlert))));
-
+*/
             Categorie categorie = categoriesList.stream().filter(categorie1 ->
                     categorie1.getNom().equals(CategoryChoiceBox.getSelectionModel().getSelectedItem())).findAny().get();
 
@@ -348,15 +345,6 @@ public class AjouterProduitDialogController implements Initializable {
         CodeBarreTfd.setText(passedProduit.getCodeBarre());
         CodeBarreTfd.setText(passedProduit.getCodeBarre());
         CategoryChoiceBox.getSelectionModel().select(passedProduit.getCategorie().getNom());
-        SysMeasureChoiceBox.getSelectionModel().select(passedProduit.getSystemMeasure());
-        QtyUnitTfd.setText(passedProduit.getQtyUnite().toString());
-        QtyAlertTf.setText(passedProduit.getQtyAlerte().toString());
-        PeerisableCheckBox.setSelected(passedProduit.getEstPerissable());
-         if(passedProduit.getEstPerissable()){
-             JoursAlerteTf.setText(passedProduit.getJoursAlerte().toString());
-         }else {
-             JoursAlerteTf.setText("");
-         }
 
 
     }

@@ -45,21 +45,6 @@ public class Vente {
 
 
 
-     public void addLigneVente(LigneVente lv){
-
-          ligneVentes.add(lv);
-          lv.setVente(this);
-          lv.getProduit().getLigneVentes().add(lv);
-
-     }
-     public void removeLigneAchat(LigneVente lv){
-
-          ligneVentes.remove(lv);
-          lv.setVente(null);
-
-          lv.getProduit().getLigneVentes().remove(lv);
-
-     }
 
      @Override
      public String toString() {

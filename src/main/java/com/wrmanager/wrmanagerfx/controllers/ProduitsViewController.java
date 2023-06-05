@@ -146,7 +146,7 @@ public class ProduitsViewController implements Initializable {
 
      fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Excel Files", "*.xlsx"));
         try {
-            produitService.saveExcelSheet(file);
+           // produitService.saveExcelSheet(file);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -204,7 +204,7 @@ public class ProduitsViewController implements Initializable {
         qtyUniteColumn.setCellValueFactory(
                 new PropertyValueFactory<Produit, Integer>("qtyUnite"));
 
-        setupPeerisableCellValueFactory();
+        //setupPeerisableCellValueFactory();
         setupCategorieCellValueFactory();
         setupActionsCellValueFactory();
 
@@ -226,19 +226,6 @@ public class ProduitsViewController implements Initializable {
 
 
 
-    }
-
-    private void setupPeerisableCellValueFactory() {
-        perissableColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Produit, Boolean>, ObservableValue<Boolean>>() {
-
-
-            @Override
-            public ObservableValue<Boolean> call(TableColumn.CellDataFeatures<Produit, Boolean> produitBooleanCellDataFeatures) {
-                return new SimpleBooleanProperty(produitBooleanCellDataFeatures.getValue().getEstPerissable());
-            }
-        });
-
-          perissableColumn.setCellFactory(CheckBoxTableCell.forTableColumn(perissableColumn));
     }
 
     private void setupActionsCellValueFactory() {

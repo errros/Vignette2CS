@@ -54,21 +54,6 @@ public class Achat implements Serializable {
      private Vendeur vendeur;
 
 
-     public void addLigneAchat(LigneAchat la){
-
-          ligneAchats.add(la);
-          la.setAchat(this);
-          la.getProduit().getLigneAchats().add(la);
-
-     }
-     public void removeLigneAchat(LigneAchat la){
-
-          ligneAchats.remove(la);
-          la.setAchat(null);
-
-          la.getProduit().getLigneAchats().remove(la);
-
-     }
 
 
      public Integer getTotale() {

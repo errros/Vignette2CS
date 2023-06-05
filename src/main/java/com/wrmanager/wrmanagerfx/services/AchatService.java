@@ -32,13 +32,6 @@ public class AchatService {
 
         Produit p = ligneAchat.getProduit();
         p.setDatePeremption(ligneAchat.getDatePeremption());
-        p.setPrixAchatTotale(ligneAchat.getPrixAchatTotale());
-        p.setPrixAchatUnite(ligneAchat.getPrixAchatUnite());
-        p.setPrixVenteTotale(ligneAchat.getPrixVenteTotale());
-        p.setPrixVenteUnite(ligneAchat.getPrixVenteUnite());
-        p.setQtyTotale(p.getQtyTotale() + ligneAchat.getQtyUnite() * ligneAchat.getQtyTotale());
-        p.setQtyUnite(Float.valueOf(ligneAchat.getQtyUnite()));
-
 
         var pp = produitDAO.update(p);
 
@@ -52,7 +45,6 @@ public class AchatService {
     private void removeLigneAchatUpdateQtyTotale(LigneAchat ligneAchat){
 
         Produit p = ligneAchat.getProduit();
-        p.setQtyTotale(p.getQtyTotale() - ligneAchat.getQtyUnite() * ligneAchat.getQtyTotale());
 
         var result =  produitDAO.update(p);
 /*

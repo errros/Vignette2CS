@@ -32,14 +32,7 @@ public class ModifierStockDialogController  implements Initializable {
 
     public void setPassedProduit(Produit passedProduit) {
         this.passedProduit = passedProduit;
-        QtyTfd.setText(String.valueOf(passedProduit.getQtyTotale()));
-        PrixAchatTfd.setText(String.valueOf(passedProduit.getPrixAchatUnite()));
-        PrixVenteTfd.setText(String.valueOf(passedProduit.getPrixVenteUnite()));
-        if(!passedProduit.getEstPerissable()) {
-            DateTfd.setDisable(true);
-        }else {
-            Optional.ofNullable(passedProduit.getDatePeremption()).ifPresent(date -> DateTfd.setValue(date.toLocalDate()));
-        }
+
     }
 
     public Dialog<ButtonType> getDialog1() {
@@ -92,19 +85,10 @@ public class ModifierStockDialogController  implements Initializable {
         var prixAchat = PrixAchatTfd.getText();
         var prixVente = PrixVenteTfd.getText();
         Date date = null;
-        if (passedProduit.getEstPerissable() && Optional.ofNullable(DateTfd.getValue()).isPresent()) {
 
             date = Date.valueOf(DateTfd.getValue());
-        }
 
 
-        if(validateInput(qty,prixAchat,prixVente,passedProduit.getEstPerissable(),date)) {
-            passedProduit.setQtyTotale(Float.valueOf(qty));
-            passedProduit.setPrixAchatUnite(Integer.valueOf(prixAchat));
-            passedProduit.setPrixVenteUnite(Integer.valueOf(prixVente));
-            if (DateTfd.getValue() != null) {
-                passedProduit.setDatePeremption(Date.valueOf(DateTfd.getValue()));
-            }
 
             produitService.update(passedProduit,passedProduit.getCategorie());
 
@@ -112,7 +96,7 @@ public class ModifierStockDialogController  implements Initializable {
             dialog1.close();
 
         }
-    }
+
 
     @FXML
     void AnnulerButtonOnAction(ActionEvent event) {
@@ -121,47 +105,6 @@ public class ModifierStockDialogController  implements Initializable {
     }
 
 
-    private Boolean validateInput(String qtyTotale , String prixAchatTotale , String prixVenteTotale,
-                                  Boolean perissable , Date datePeeremption){
-
-
-//STOCK NEGATIVE TEST
-       String qtyValidation = passedProduit.getSystemMeasure() == SystemMeasure.UNITE ? isQtyIntValid(qtyTotale,true) : isQtyFloatValid(qtyTotale,true);
-
-       if(!qtyValidation.equals("true")){
-           AlertLbl.setVisible(true);
-           AlertLbl.setText(qtyValidation);
-           return false;
-       }
-
-        var prixAchatValidation = isQtyIntPositiveValid(prixAchatTotale,true,true);
-        if(!prixAchatValidation.equals("true")){
-            AlertLbl.setVisible(true);
-            AlertLbl.setText("Le Prix d'Achat est un nombre rond positive");
-            return false;
-        }
-        var prixVenteValidation = isQtyIntPositiveValid(prixAchatTotale,true,true);
-        if(!prixVenteValidation.equals("true")){
-            AlertLbl.setVisible(true);
-            AlertLbl.setText("Le Prix d'Vente est un nombre rond positive");
-            return false;
-        }
-
-        if(perissable && datePeeremption!= null){
-
-            var dateValidation = isDatePeeremptionValid(datePeeremption.toString(),true);
-            if(!dateValidation.equals("true")){
-                AlertLbl.setVisible(true);
-                AlertLbl.setText(dateValidation);
-                return false;
-            }
-
-
-        }
-
-        return true;
-
-    }
 
 
 

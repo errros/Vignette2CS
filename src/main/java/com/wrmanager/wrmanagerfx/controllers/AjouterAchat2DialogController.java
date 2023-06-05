@@ -418,26 +418,10 @@ public class AjouterAchat2DialogController implements Initializable {
         var qtyTotale = qtyTotaleTF.getText();
         var qtyUnite = qtyUnitaireTF.getText();
         var remarque = remarqueTF.getText();
-        String date = produit.getEstPerissable() ? datePeremptionDP.getValue().toString() : null;
+        //String date = produit.getEstPerissable() ? datePeremptionDP.getValue().toString() : null;
 
+         return null;
 
-
-        if(validateInput(qtyTotale,qtyUnite,prixAchatTotale,prixAchatUnite,
-                prixVenteTotale,prixVenteUnite,produit,date,remarque)) {
-            LigneAchat la = LigneAchat.builder().produit(produit).
-                    achat(passedAchat).prixAchatUnite(Integer.valueOf(prixAchatUnite)).prixVenteUnite(Integer.valueOf(prixVenteUnite))
-                    .prixVenteTotale(Integer.valueOf(prixVenteTotale))
-                    .prixAchatTotale(Integer.valueOf(prixAchatTotale)).qtyTotale(Float.valueOf(qtyTotale)).
-                    qtyUnite(Float.valueOf(qtyUnite)).remarque(remarque).build();
-            if (produit.getEstPerissable()) {
-                la.setDatePeremption(Date.valueOf(datePeremptionDP.getValue()));
-            }
-
-            la.setTotale(la.getTotale());
-            return la;
-        } else {
-            throw new IllegalArgumentException("validation failed!");
-        }
 
 
 
@@ -909,47 +893,7 @@ AlertLbl.setVisible(false);
 
     }
 
-    private void codeBarreTFBindWithOtherFields() {
 
-        codeBarreTF.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                produitsList.stream().filter(produit -> produit.getCodeBarre().equals(t1)).findAny().ifPresentOrElse(produit ->
-                {
-
-
-                    setInputsEditable(true);
-                    designationTF.setText(produit.getDesignation());
-
-                    if (produit.getEstPerissable()) {
-                        Optional.ofNullable(produit.getDatePeremption()).ifPresent(date -> datePeremptionDP.setValue(date.toLocalDate()));
-
-                    } else {
-                        datePeremptionDP.setDisable(true);
-
-                    }
-                    prxAchatTotaleTF.setText(produit.getPrixAchatTotale().toString());
-                    prxVenteTotaleTF.setText(produit.getPrixVenteTotale().toString());
-                    prxAchatUnitaireTF.setText(produit.getPrixAchatUnite().toString());
-                    prxVenteUnitaireTF.setText(produit.getPrixVenteUnite().toString());
-                    qtyUnitaireTF.setText(produit.getQtyUnite().toString());
-                    qtyTotaleTF.setText("1");
-
-
-                }, new Runnable() {
-                    @Override
-                    public void run() {
-
-                        setInputsEditable(false);
-
-                    }
-                });
-
-            }
-        });
-
-
-    }
 
     private AjouterProduitDialogController openAjouterProduitDialog(){
         try {
@@ -995,17 +939,6 @@ return null;
 
 
                                                              setInputsEditable(true);
-                                                             if(produit.getEstPerissable()){
-
-                                                             }
-                                                             qtyTotaleTF.setText("1");
-                                                             prxAchatTotaleTF.setText(produit.getPrixAchatTotale().toString());
-                                                             prxVenteTotaleTF.setText(produit.getPrixVenteTotale().toString());
-                                                             prxAchatUnitaireTF.setText(produit.getPrixAchatUnite().toString());
-                                                             prxVenteUnitaireTF.setText(produit.getPrixVenteUnite().toString());
-                                                             qtyUnitaireTF.setText(produit.getQtyUnite().toString());
-
-
 
 
                                                          }, new Runnable() {
@@ -1049,10 +982,7 @@ return null;
         codeBarreTF.setText(ligneAchat.getProduit().getCodeBarre());
         designationTF.setText(ligneAchat.getProduit().getDesignation());
 
-        if(ligneAchat.getProduit().getEstPerissable() && Optional.ofNullable(ligneAchat.getDatePeremption()).isPresent()) {
-            datePeremptionDP.setValue(ligneAchat.getDatePeremption().toLocalDate());
 
-        }
 
         prxVenteUnitaireTF.setText(ligneAchat.getPrixVenteUnite().toString());
         prxAchatUnitaireTF.setText(ligneAchat.getPrixAchatUnite().toString());
@@ -1102,57 +1032,6 @@ private void updateSuggestions(){
         return ligneAchats.stream().map(LigneAchat::getTotale).reduce(0, Integer::sum);
     }
 
-private Boolean validateInput(String qtyTotale , String qtyUnitaire
-        , String prixAchatT , String prixAchatU , String prixVenteT,
-          String prixVenteU , Produit produit , String datePeremption, String remarque){
-
-
-
-    String qtyTotaleValidation = produit.getSystemMeasure() == SystemMeasure.UNITE ? isQtyIntValid(qtyTotale,true) : isQtyFloatValid(qtyTotale,true);
-    if(!qtyTotaleValidation.equals("true")){
-        AlertLbl.setVisible(true);
-        AlertLbl.setText(qtyTotaleValidation);
-        return false;
-    }
-
-
-
-        String qtyUnitValidation = produit.getSystemMeasure() == SystemMeasure.UNITE ? isQtyIntValid(qtyUnitaire,true) : isQtyFloatValid(qtyUnitaire,true);
-        if(!qtyUnitValidation.equals("true")){
-            AlertLbl.setVisible(true);
-            AlertLbl.setText(qtyUnitValidation);
-            return false;
-        }
-
-    String prxValidations = isPrixVenteGreaterThanPrixAchat(prixAchatU,prixVenteU,prixAchatT,prixVenteT);
-      if(!prxValidations.equals("true")) {
-          AlertLbl.setVisible(true);
-          AlertLbl.setText(prxValidations);
-          return false;
-      }
-
-      if(produit.getEstPerissable() && datePeremption != null){
-          String dateValidation = isDatePeeremptionValid(datePeremption,true);
-          if(!dateValidation.equals("true")){
-              AlertLbl.setVisible(true);
-              AlertLbl.setText(dateValidation);
-              return false;
-          }
-      }
-
-
-      String remarqueValidation = isRemarqueValid(remarque,false);
-      if(!remarqueValidation.equals("true")){
-          AlertLbl.setVisible(true);
-          AlertLbl.setText(remarqueValidation);
-          return false;
-      }
-
-
-return true;
-
-    }
-
 
     private void setupPrxKeyChangeListeners() {
         prxAchatUnitaireTF.setOnKeyTyped(prxAchatUnitaireOnInputTextChanged());
@@ -1167,7 +1046,6 @@ return true;
         setInputsEditable(false);
         AlertLbl.setVisible(false);
 
-        codeBarreTFBindWithOtherFields();
         designationTFBindWithOtherFields();
         setupPrxKeyChangeListeners();
 

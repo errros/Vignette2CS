@@ -142,7 +142,7 @@ public class FavorieItemController implements Initializable {
 
                      itemGrid.add(SupprimerButton,0,0);
                      NomLbl.setText(passedProduitFavori.getProduit().getDesignation());
-                     PrixLbl.setText(passedProduitFavori.getProduit().getPrixVenteTotale().toString());
+                     //PrixLbl.setText(passedProduitFavori.getProduit().getPrixVenteTotale().toString());
 
                  }
             }

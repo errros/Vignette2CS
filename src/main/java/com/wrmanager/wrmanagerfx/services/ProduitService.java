@@ -121,6 +121,7 @@ return         (char) (cdigit + '0');
 
 
 // Excel format:    CODEBAR , DESGINATION , PEERISABLE , SYSTEM UNITE , QTYUnite
+/*
 
     public void saveExcelSheet(File file) throws IOException, InvalidFormatException {
 
@@ -143,6 +144,7 @@ return         (char) (cdigit + '0');
         }
 
     }
+*/
 
     private String getCellValue(Row row, int cellNo) {
         DataFormatter formatter = new DataFormatter();
