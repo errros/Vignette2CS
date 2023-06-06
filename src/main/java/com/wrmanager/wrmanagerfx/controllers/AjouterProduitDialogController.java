@@ -19,6 +19,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.HBox;
@@ -28,6 +29,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.Normalizer;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -56,6 +58,9 @@ public class AjouterProduitDialogController implements Initializable {
     private MFXButton AjouterButton;
 
     @FXML
+    private Button CameraButton;
+
+    @FXML
     private Button AjouterCategoryButton;
 
     @FXML
@@ -66,8 +71,6 @@ public class AjouterProduitDialogController implements Initializable {
 
     @FXML
     private ChoiceBox<String> CategoryChoiceBox;
-    @FXML
-    private ChoiceBox<SystemMeasure> SysMeasureChoiceBox;
 
 
 
@@ -85,19 +88,13 @@ public class AjouterProduitDialogController implements Initializable {
     private MFXCheckbox PeerisableCheckBox;
 
     @FXML
-    private TextField QtyAlertTf;
+    private TextField FormTfd;
 
     @FXML
-    private TextField QtyUnitTfd;
+    private TextField DosageTfd;
     @FXML
     private Label AlertLbl;
 
-
-    @FXML
-    private TextField JoursAlerteTf;
-
-    @FXML
-    private Label uniteTF;
 
     @FXML
     private HBox buttonsHb;
@@ -108,8 +105,6 @@ public class AjouterProduitDialogController implements Initializable {
     @FXML
     private VBox vbox;
 
-    @FXML
-    private Label joursAlertLabel;
 
     private BooleanProperty onEditMode = new SimpleBooleanProperty(false);
 
@@ -159,17 +154,16 @@ public class AjouterProduitDialogController implements Initializable {
 
         var codeBarre = CodeBarreTfd.getText().isEmpty()?produitService.generateEAN13() : CodeBarreTfd.getText();
         var designation = DesignationTfd.getText();
-        var sys = SysMeasureChoiceBox.getSelectionModel().getSelectedItem();
-        var peerisable = PeerisableCheckBox.isSelected();
-        var qtyUnit = QtyUnitTfd.getText();
-        var qtyAlert = QtyAlertTf.getText();
-        var jrsAlert = JoursAlerteTf.getText();
+        var form = FormTfd.getText();
+        var dosage = DosageTfd.getText();
 
 
-        if(validateInput(codeBarre,designation,qtyUnit,sys,peerisable,jrsAlert,qtyAlert)) {
+        if(validateInput(codeBarre,designation,form,dosage)) {
     Produit produit = Produit.builder().
             codeBarre(codeBarre).
             designation(designation)
+            .forme(form)
+            .dosage(dosage)
             .build();
 
 
@@ -190,23 +184,18 @@ public class AjouterProduitDialogController implements Initializable {
 
         var codeBarre = CodeBarreTfd.getText().isEmpty()?produitService.generateEAN13() : CodeBarreTfd.getText();
         var designation = DesignationTfd.getText();
-        var sys = SysMeasureChoiceBox.getSelectionModel().getSelectedItem();
-        var peerisable = PeerisableCheckBox.isSelected();
-        var qtyUnit = QtyUnitTfd.getText();
-        var qtyAlert = QtyAlertTf.getText();
-        var jrsAlert = JoursAlerteTf.getText();
 
-        if(validateInput(codeBarre,designation,qtyUnit,sys,peerisable,jrsAlert,qtyAlert)) {
+
+        var form = FormTfd.getText();
+        var dosage = DosageTfd.getText();
+        if(validateInput(codeBarre,designation,form,dosage)) {
 
 
             passedProduit.setCodeBarre(codeBarre);
             passedProduit.setDesignation(designation);
-          /*  passedProduit.setSystemMeasure(sys);
-            passedProduit.setEstPerissable(peerisable);
-            passedProduit.setQtyUnite(Float.valueOf(qtyUnit));
-            passedProduit.setQtyUnite(Float.valueOf(qtyAlert));
-            passedProduit.setJoursAlerte(Integer.valueOf(Math.round(Float.valueOf(jrsAlert))));
-*/
+            passedProduit.setForme(form);
+            passedProduit.setDosage(dosage);
+
             Categorie categorie = categoriesList.stream().filter(categorie1 ->
                     categorie1.getNom().equals(CategoryChoiceBox.getSelectionModel().getSelectedItem())).findAny().get();
 
@@ -220,8 +209,7 @@ public class AjouterProduitDialogController implements Initializable {
     }
 
 
-    private Boolean validateInput(String codeBarre , String designation , String qtyUnit ,SystemMeasure sys ,
-                                  Boolean perissable ,String jours , String qtyAlert){
+    private Boolean validateInput(String codeBarre , String designation , String form, String Dosage){
 
 
         var codeBarreValidation = isCodeBarreValid(codeBarre,true);
@@ -230,41 +218,6 @@ public class AjouterProduitDialogController implements Initializable {
             AlertLbl.setText(codeBarreValidation);
             return false;
         }
-        var designationValidation = isNomValid(designation,true);
-        if(!designationValidation.equals("true")){
-            AlertLbl.setVisible(true);
-            AlertLbl.setText("Une Désignation doit etre 3 characters long au moins");
-            return false;
-        }
-
-
-            var qtyValidation = sys == SystemMeasure.UNITE ? isQtyIntPositiveValid(qtyUnit, true,false) : isQtyFloatPositiveValid(qtyUnit,true,false);
-
-        if(!qtyValidation.equals("true")){
-            AlertLbl.setVisible(true);
-            AlertLbl.setText(qtyValidation);
-            return false;
-        }
-
-        var qtyAlertValidation = sys == SystemMeasure.UNITE ? isQtyIntPositiveValid(qtyAlert,true,true) : isQtyFloatPositiveValid(qtyAlert,true,true);
-
-        if(!qtyAlertValidation.equals("true")){
-            AlertLbl.setVisible(true);
-            AlertLbl.setText(qtyAlertValidation);
-            return false;
-        }
-
-        if(perissable){
-
-            var jrsValidation = isQtyIntPositiveValid(jours,true,true);
-    if(!jrsValidation.equals("true")){
-        AlertLbl.setVisible(true);
-        AlertLbl.setText("le nombre des jours doit etre superieur a 0");
-        return false;
-    }
-
-
-}
 
         return true;
 
@@ -323,6 +276,47 @@ public class AjouterProduitDialogController implements Initializable {
     void CheckBoxOnAction(ActionEvent event) {
     }
 
+
+
+    @FXML
+    void CameraButtonOnAction(ActionEvent event) throws IOException {
+
+
+
+        try {
+            SideBarController.BlurBackground();
+            FXMLLoader fxmlLoader =new FXMLLoader(Main.class.getResource("fxml/CaptureCameraDialog.fxml"));
+            DialogPane CaptureCameraDialog= fxmlLoader.load();
+            CaptureCameraDialog.getStylesheets().add(
+                    Main.class.getResource("images/dialog.css").toExternalForm());
+            CaptureCameraDialog.setStyle(
+                    "primary:"+prefs.get("PrimaryColor","rgba(35, 140, 131, 1)")
+                            .replaceAll("0x","#")
+                            +";"+"secondary:"+prefs.get("SecondaryColor","#C8E2E0")
+                            .replaceAll("0x","#")+";");
+            CaptureCameraController captureCameraController  =fxmlLoader.getController();
+            Dialog<ButtonType> dialog =new Dialog<>();
+            dialog.setDialogPane(CaptureCameraDialog);
+            dialog.initStyle(StageStyle.TRANSPARENT);
+            captureCameraController.setDialog(dialog);
+            CaptureCameraDialog.getScene().setFill(Color.rgb(0,0,0,0));
+            BoxBlur boxBlur=new BoxBlur();
+            boxBlur.setIterations(10);
+            boxBlur.setHeight(7);
+            boxBlur.setWidth(7);
+            this.dialog.getDialogPane().setEffect(boxBlur);
+            var result =  dialog.showAndWait();
+            if(result.isPresent() && result.get().equals(ButtonType.YES)){
+                CategoryChoiceBox.getSelectionModel().select(categoriesList.get(0).getNom());
+            }
+            this.dialog.getDialogPane().setEffect(null);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void setDialog(Dialog<ButtonType> dialog) {
         this.dialog = dialog;
     }
@@ -345,50 +339,16 @@ public class AjouterProduitDialogController implements Initializable {
         CodeBarreTfd.setText(passedProduit.getCodeBarre());
         CodeBarreTfd.setText(passedProduit.getCodeBarre());
         CategoryChoiceBox.getSelectionModel().select(passedProduit.getCategorie().getNom());
+        FormTfd.setText(passedProduit.getForme());
+        DosageTfd.setText(passedProduit.getDosage());
 
 
     }
 
 
-    private void choiceBoxChangeListeners(){
-
-        CategoryChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                if(t1.intValue()!= -1) {
-                        QtyAlertTf.setText(categoriesList.get(t1.intValue()).getQtyAlerte().toString());
-                        JoursAlerteTf.setText(categoriesList.get(t1.intValue()).getJoursAlerte().toString());
-                }
-
-            }
-        });
-
-        SysMeasureChoiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<SystemMeasure>() {
-            @Override
-            public void changed(ObservableValue<? extends SystemMeasure> observableValue, SystemMeasure systemMeasure, SystemMeasure t1) {
-                if (t1 == SystemMeasure.UNITE) {
-                    uniteTF.setText("Unité");
-                    QtyUnitTfd.setText("1");
-                } else {
-                    uniteTF.setText("Kg");
-                    QtyUnitTfd.setText("1.0");
-                }
-            }
-        });
-
-    }
 
 
-    private void peerisableChangeListner() {
 
-        PeerisableCheckBox.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean t1) {
-                    JoursAlerteTf.setVisible(t1);
-                    joursAlertLabel.setVisible(t1);
-            }
-        });
-    }
 
 
     @Override
@@ -396,7 +356,6 @@ public class AjouterProduitDialogController implements Initializable {
 
         AlertLbl.setVisible(false);
 
-        choiceBoxChangeListeners();
 
         CategoryChoiceBox.getItems().addAll(categoriesList.stream().map(Categorie::getNom).collect(Collectors.toSet()));
         CategoryChoiceBox.getSelectionModel().selectFirst();
@@ -426,11 +385,6 @@ public class AjouterProduitDialogController implements Initializable {
                   }
               }
           });
-
-        SysMeasureChoiceBox.getItems().addAll(SystemMeasure.UNITE,SystemMeasure.POIDS);
-        SysMeasureChoiceBox.getSelectionModel().select(0);
-        peerisableChangeListner();
-        PeerisableCheckBox.setSelected(true);
 
 
     }

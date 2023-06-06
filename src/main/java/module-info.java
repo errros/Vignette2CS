@@ -24,6 +24,7 @@ module com.wrmanager.wrmanagerfx{
     requires net.synedra.validatorfx;
     requires java.prefs;
     requires jasperreports;
+    requires opencv;
 
 
     opens com.wrmanager.wrmanagerfx to javafx.fxml,javafx.base,javafx.controls , org.controlsfx.controls;

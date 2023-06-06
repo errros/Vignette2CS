@@ -42,10 +42,10 @@ public class Produit {
     private String designation;
 
 
-    private String dci;
 
 
     private String forme;
+
 
 
     private String dosage;
@@ -55,10 +55,6 @@ public class Produit {
     @Basic(optional = false)
     @Column(nullable = false)
     private Timestamp creeLe  = Timestamp.valueOf(LocalDateTime.now());;
-
-
-    private Date datePeremption;
-
 
 
 
@@ -81,7 +77,6 @@ public class Produit {
 
     private URI imagePath;
 
-
     public void addCategorie(Categorie categorie){
         this.setCategorie(categorie);
         categorie.getProduits().add(this);
@@ -92,6 +87,8 @@ public class Produit {
          categorie.getProduits().remove(this);
 
     }
+
+
     public void addFavori(ProduitFavori produitFavori){
         favoris.add(produitFavori);
         produitFavori.setProduit(this);
@@ -121,7 +118,6 @@ public class Produit {
                 ", codeBarre='" + codeBarre + '\'' +
                 ", designation='" + designation + '\'' +
                 ", creeLe=" + creeLe +
-                ", datePeremption=" + datePeremption +
                 ", categorie=" + categorie +
                 ", favoris=" + favoris +
                 ", imagePath=" + imagePath +

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmaApp.pharmaAppFX.controllers.CaptureCameraController">
+    <center>
+        <StackPane fx:id="imgContainer" styleClass="imgContainer">
+            <children>
+                <ImageView fx:id="imageView" fitHeight="480.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+        </StackPane>
+    </center>
+    <bottom>
+        <HBox fx:id="bottomHBox" alignment="BOTTOM_CENTER" spacing="20.0" style="-fx-background-color: #EEE;" BorderPane.alignment="CENTER">
+            <children>
+                <FontAwesomeIconView glyphName="REPEAT" onMouseClicked="#repeatOnMouseClicked" size="30" styleClass="icon" />
+                <FontAwesomeIconView glyphName="CAMERA" onMouseClicked="#CaptureONMouseClicked" size="40" styleClass="icon">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+            </children>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>

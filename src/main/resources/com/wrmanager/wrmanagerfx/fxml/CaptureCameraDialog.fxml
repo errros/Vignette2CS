@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="600.0" prefWidth="680.0" styleClass="Dialog" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wrmanager.wrmanagerfx.controllers.CaptureCameraController">
+   <content>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" style="-fx-background-color: transparent;">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <AnchorPane layoutX="4.0" layoutY="5.0" prefHeight="42.0" prefWidth="680.0" styleClass="TopAnchor" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="-6.0">
+                     <children>
+                        <Label fx:id="titleLabel" alignment="CENTER" layoutX="202.0" layoutY="6.0" text="Extraction de vignette " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow height="1.0" offsetY="3.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <ImageView fx:id="imageView" fitHeight="430.0" fitWidth="644.0" layoutX="20.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="65.60000000000002" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.000000000000114" AnchorPane.topAnchor="66.0" />
+                  <HBox fx:id="buttonsHb" alignment="CENTER" layoutX="199.0" layoutY="487.0" prefHeight="74.0" prefWidth="284.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="CameraButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#CameraButtonOnAction" style="-fx-background-color: transparent;" text=" ">
+                           <graphic>
+                              <FontAwesomeIconView fill="#238c83" glyphName="CAMERA" size="40" styleClass="AddIcons" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow height="31.41" radius="14.955" width="30.41">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+         <padding>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+   </content>
+</DialogPane>

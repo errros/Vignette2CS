@@ -31,8 +31,6 @@ public class AchatService {
     private void setProduitUptoDateWithLastLigneAchat(LigneAchat ligneAchat){
 
         Produit p = ligneAchat.getProduit();
-        p.setDatePeremption(ligneAchat.getDatePeremption());
-
         var pp = produitDAO.update(p);
 
 

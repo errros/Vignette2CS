@@ -96,9 +96,8 @@ public class ProduitsViewController implements Initializable {
     TableColumn codeBarreColumn = new TableColumn("Code à Barre");
     TableColumn designationColumn = new TableColumn("Designation");
     TableColumn categorieColumn = new TableColumn("Catégorie");
-    TableColumn sysMeasureColumn = new TableColumn("System de Measure");
-    TableColumn qtyUniteColumn = new TableColumn("Qty d'Unité");
-    TableColumn perissableColumn = new TableColumn("Périssable");
+    TableColumn formColumn = new TableColumn("Forme");
+    TableColumn dosageColumn = new TableColumn("Dosage");
     TableColumn<Produit, Void> ActionsColumn = new TableColumn("Actions");
 
 
@@ -183,9 +182,9 @@ public class ProduitsViewController implements Initializable {
         codeBarreColumn.setSortable(true);
         designationColumn.prefWidthProperty().bind(ProduitsTable.widthProperty().multiply(sizeCoulumn));
         categorieColumn.prefWidthProperty().bind(ProduitsTable.widthProperty().multiply(sizeCoulumn));
-        sysMeasureColumn.prefWidthProperty().bind(ProduitsTable.widthProperty().multiply(sizeCoulumn));
-        qtyUniteColumn.prefWidthProperty().bind(ProduitsTable.widthProperty().multiply(sizeCoulumn));
-        perissableColumn.prefWidthProperty().bind(ProduitsTable.widthProperty().multiply((sizeCoulumn/1.5)));
+        formColumn.prefWidthProperty().bind(ProduitsTable.widthProperty().multiply(sizeCoulumn));
+        dosageColumn.prefWidthProperty().bind(ProduitsTable.widthProperty().multiply(sizeCoulumn));
+
         ActionsColumn.prefWidthProperty().bind(ProduitsTable.widthProperty().multiply((sizeCoulumn*1.5)));
 
 
@@ -199,12 +198,11 @@ public class ProduitsViewController implements Initializable {
         designationColumn.setCellValueFactory(
                 new PropertyValueFactory<Produit, String>("designation"));
 
-        sysMeasureColumn.setCellValueFactory(
-                new PropertyValueFactory<Produit, SystemMeasure>("systemMeasure"));
-        qtyUniteColumn.setCellValueFactory(
-                new PropertyValueFactory<Produit, Integer>("qtyUnite"));
+        formColumn.setCellValueFactory(
+                new PropertyValueFactory<Produit, SystemMeasure>("Forme"));
+        dosageColumn.setCellValueFactory(
+                new PropertyValueFactory<Produit, Integer>("Dosage"));
 
-        //setupPeerisableCellValueFactory();
         setupCategorieCellValueFactory();
         setupActionsCellValueFactory();
 
@@ -467,7 +465,7 @@ public class ProduitsViewController implements Initializable {
 
         ProduitsTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         //add columns to the table
-        ProduitsTable.getColumns().addAll(codeBarreColumn,designationColumn,categorieColumn,sysMeasureColumn,qtyUniteColumn,perissableColumn,ActionsColumn);
+        ProduitsTable.getColumns().addAll(codeBarreColumn,designationColumn,categorieColumn,formColumn,dosageColumn,ActionsColumn);
 
 
 
